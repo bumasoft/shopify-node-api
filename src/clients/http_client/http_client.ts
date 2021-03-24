@@ -1,6 +1,6 @@
 import querystring, {ParsedUrlQueryInput} from 'querystring';
 import crypto from 'crypto';
-import fs from 'fs';
+//import fs from 'fs';
 
 import fetch, {RequestInit, Response} from 'node-fetch';
 import {Method, StatusCode} from '@shopify/network';
@@ -184,7 +184,8 @@ class HttpClient {
                 const log = `API Deprecation Notice ${new Date().toLocaleString()} : ${JSON.stringify(
                   deprecation,
                 )}\n    Stack Trace: ${stack}\n`;
-                fs.writeFileSync(Context.LOG_FILE, log, {flag: 'a', encoding: 'utf-8'});
+                //fs.writeFileSync(Context.LOG_FILE, log, {flag: 'a', encoding: 'utf-8'});
+                console.warn(log);
               } else {
                 console.warn('API Deprecation Notice:', deprecation);
               }
